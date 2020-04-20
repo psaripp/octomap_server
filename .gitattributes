@@ -1,17 +1,8 @@
 * text eol=lf
 
-*.dae binary
+*.bt binary
+*.ot binary
 
 *.jpg binary
 *.png binary
 *.tga binary
-
-*.ogg binary
-*.mp3 binary
-*.zip binary
-
-*.ply binary
-*.obj binary
-*.mtl binary
-*.fbx binary
-*.3ds binary

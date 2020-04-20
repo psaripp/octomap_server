@@ -18,3 +18,4 @@ rosrun octomap_server map_server [-l] [-b | -f] map.(bt|ot)
     -l latch published message
 ```
 
+Test maps can be found in `test` folder.
