@@ -4,21 +4,22 @@ project(octomap_server)
 find_package(catkin REQUIRED
         COMPONENTS
         roscpp
-        octomap
+        #        octomap
         octomap_msgs
         )
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(YAMLCPP yaml-cpp REQUIRED)
-if (YAMLCPP_VERSION VERSION_GREATER "0.5.0")
-    add_definitions(-DHAVE_YAMLCPP_GT_0_5_0)
-endif ()
-link_directories(${YAMLCPP_LIBRARY_DIRS})
+find_package(OCTOMAP REQUIRED)
+
+#find_package(PkgConfig REQUIRED)
+#pkg_check_modules(YAMLCPP yaml-cpp REQUIRED)
+#if (YAMLCPP_VERSION VERSION_GREATER "0.5.0")
+#    add_definitions(-DHAVE_YAMLCPP_GT_0_5_0)
+#endif ()
+#link_directories(${YAMLCPP_LIBRARY_DIRS})
 
 catkin_package(
-        CATKIN_DEPENDS
-        roscpp
-        octomap_msgs
+        DEPENDS octomap
+        CATKIN_DEPENDS roscpp octomap_msgs
 )
 
 find_package(OCTOMAP REQUIRED)
