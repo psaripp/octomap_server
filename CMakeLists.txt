@@ -38,16 +38,16 @@ file(GLOB_RECURSE SOURCE_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/*.hxx
         )
 
-add_executable(map_server ${SOURCE_FILES})
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
-add_dependencies(map_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(map_server
+add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(${PROJECT_NAME}
         ${OCTOMAP_LIBRARIES}
         ${catkin_LIBRARIES}
         )
 
 ## Install executables and/or libraries
-install(TARGETS map_server
+install(TARGETS ${PROJECT_NAME}
         DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 ## Install project namespaced headers
